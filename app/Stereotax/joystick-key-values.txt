@@ -1,0 +1,31 @@
+
+Joystick-element-size=9
+
+element 1 => left horizontal,default=128
+element 2 => left vertical;default=128
+element 3 ??
+element 4 => right horizontal,default=128
+element 5 => right vertical,default=128
+element 6 => buttons (x=143,Y=31,B=47,A=79,pad-left=6, pad-right=2,pad-up=0, pad-down=4);; default=15
+element 7 => side buttons (left trigger=4, left bumper=1, right trigger=8, right bumper=2, back=16, start=32);; default=0
+element 8 =>main button (pressed=64[light on],off=192
+
+game-pad element-size=15
+
+element 1 => left horizontal,0,255 absolute
+element 2 => left horizontal,0...255 
+element 3 =>left vertical, 0,255
+element 4 => left vertical 0....255
+
+element 5 => right horizontal,0,255 absolute
+element 6 => right horizontal,0...255 
+element 7 =>right vertical, 0,255
+element 8 => right vertical 0....255
+
+element 9 => left , right trigger
+element 10 => left, right bumper
+
+element 11 => buttons (x=4,Y=8,B=2,A=1, back=64 start=128, 
+element 12 =>pad-left=156, pad-right=140,pad-up=132, pad-down=148, default=128
+element 13 =>main button, pressed=2
+element 14 ?

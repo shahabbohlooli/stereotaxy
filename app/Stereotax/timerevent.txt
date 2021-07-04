@@ -1,0 +1,95 @@
+private void timerEvent_Tick(object sender, EventArgs e)
+        {
+            if (controller != null && controller.IsConnected)
+            {
+                if (port != null && port.IsOpen)
+                {
+
+                    int z_max = 100;
+                    int y_max = 100;
+                    int x_max = 100;
+                    Single speed_xy = 1;
+                    int speed_z = 1;
+                    // Vibration v = new Vibration();
+                    if (controller.GetState().Gamepad.LeftTrigger > 10)
+                    {
+                        speed_z = 5;
+                        speed_xy = 5;
+                    }
+                    if (controller.GetState().Gamepad.RightTrigger > 10)
+                    {
+                        speed_z = 5;
+                        speed_xy = 0.5F;
+                    }
+                    //v.LeftMotorSpeed = (ushort)(controller.GetState().Gamepad.LeftTrigger * 255);
+                    // v.RightMotorSpeed = (ushort)(controller.GetState().Gamepad.RightTrigger * 255);
+
+                    x = controller.GetState().Gamepad.RightThumbX * 0.001f / 1000;
+                    if (x != 0)
+                    {
+                        x = speed_xy * x;
+                        port.WriteLine("G91");
+                        port.WriteLine("G0 X" + x.ToString());
+                        port.WriteLine("G90");
+                        x_axis_var += x;
+                        X_axis.Text = x_axis_var.ToString("F3");
+                    }
+                    y =  controller.GetState().Gamepad.RightThumbY * 0.001f / 1000;
+                    if (y != 0) {
+                        y = speed_xy * y;
+                    port.WriteLine("G91");
+                    port.WriteLine("G0 Y" + y.ToString());
+                    port.WriteLine("G90");
+                    y_axis_var += y;
+                    Y_axis.Text = y_axis_var.ToString("F3");
+                }
+                    z = controller.GetState().Gamepad.LeftThumbY * 0.001f / 1000;
+                    if (z != 0)
+                    {
+                        if (z_axis_var < z_max)
+                        {
+                            z = speed_z * z;
+                            port.WriteLine("G91");
+                            port.WriteLine("G0 Z" + z.ToString());
+                            port.WriteLine("G90");
+                            z_axis_var += z;
+                            Z_axis.Text = z_axis_var.ToString("F3");
+                        }
+                    }
+                    // controller.SetVibration(v);
+                   
+                    if (controller.GetState().Gamepad.Buttons.ToString() == "A")
+                    {
+                        messageBx.Text = controller.GetState().Gamepad.Buttons + "\r\n";
+                        x_axis_var = 0;
+                        X_axis.Text = x_axis_var.ToString("F3");
+                        port.WriteLine("G92 X0");
+                    }
+                    if (controller.GetState().Gamepad.Buttons.ToString() == "B")
+                    {
+                        messageBx.Text = controller.GetState().Gamepad.Buttons + "\r\n";
+                        y_axis_var = 0;
+                        Y_axis.Text = y_axis_var.ToString("F3");
+                        port.WriteLine("G92 Y0");
+                    }
+                    if (controller.GetState().Gamepad.Buttons.ToString() == "Y")
+                    {
+                        messageBx.Text = controller.GetState().Gamepad.Buttons + "\r\n";
+                        z_axis_var = 0;
+                        Z_axis.Text = z_axis_var.ToString("F3");
+                        port.WriteLine("G92 Z0");
+                    }
+                    if (controller.GetState().Gamepad.Buttons.ToString() == "X")
+                    {
+                        messageBx.Text = controller.GetState().Gamepad.Buttons + "\r\n";
+                        x_axis_var = 0;
+                        X_axis.Text = x_axis_var.ToString("F3");
+                        y_axis_var = 0;
+                        Y_axis.Text = y_axis_var.ToString("F3");
+                        z_axis_var = 0;
+                        Z_axis.Text = z_axis_var.ToString("F3");
+                        port.WriteLine("G92 X0 Y0 Z0");
+                    }
+                } 
+            }
+        }
