@@ -26,9 +26,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>Stereotaxy</ProductName>
-    <PublisherName>Ardabil University of Medical Sciences, School of Pharmacy</PublisherName>
+    <PublisherName>Ardabil School of Pharmacy</PublisherName>
     <SuiteName>Stereotaxy</SuiteName>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

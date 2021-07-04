@@ -308,12 +308,15 @@ namespace Stereotaxy
         {
             try
             {
-                if (port.IsOpen && port != null)
-                {
-                    port.WriteLine("M106 S0");
-                    port.WriteLine("M18");
-                    port.Close();
-                    messageBx.Text += "com port sucessfully closed";
+                if (port != null) {
+                    if (port.IsOpen)
+                    {
+
+                        port.WriteLine("M106 S0");
+                        port.WriteLine("M18");
+                        port.Close();
+                        messageBx.Text += "com port sucessfully closed";
+                    }    
                 }
             }
             catch (Exception ex)
@@ -515,12 +518,16 @@ namespace Stereotaxy
         {
             RawInputDevice.UnregisterDevice(HidUsageAndPage.Joystick);
             //RawInputDevice.UnregisterDevice(HidUsageAndPage.GamePad);
-            if (port.IsOpen && port != null)
-            {
-                port.WriteLine("M106 S0");
-                port.WriteLine("M18");
-                port.Close();
-            }
+            if (port != null) 
+            { 
+                if (port.IsOpen ) 
+                    {
+                        port.WriteLine("M106 S0");
+                        port.WriteLine("M18");
+                        port.Close();
+                 }            
+             }
+
         }
 
         private void Main_KeyPress(object sender, KeyPressEventArgs e)
@@ -531,7 +538,7 @@ namespace Stereotaxy
         private void drill_Click(object sender, EventArgs e)
         {
             drill_count++;
-            if (port.IsOpen && port != null )
+            if (port != null && port.IsOpen)
             {
                 if (drill_count % 2 != 0 && drill_count > 0)
                 {
