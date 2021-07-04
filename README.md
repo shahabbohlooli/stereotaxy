@@ -1,4 +1,4 @@
-# strereotaxy
+# stereotaxy
 Motorized Stereotaxic Instrument (MSI)
 # Introduction
 Stereotactic surgery is used in a wide variety of neuroscience applications, including lesioning, iontophoresis, cannulae implantation, and stimulation of brain areas in rat and mice. There are some major hurdles which make these techniques as a time-consuming work for those researchers who face. In addition, high probability of human error is a main problem that leads to increase the mistakes such as measurement and calculation failures. Reduction replicability of human movements.
