@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stereotaxy", "Stereotax\Stereotaxy.csproj", "{FD24A1E3-949C-42E5-B920-5C4667B1C23C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD24A1E3-949C-42E5-B920-5C4667B1C23C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD24A1E3-949C-42E5-B920-5C4667B1C23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD24A1E3-949C-42E5-B920-5C4667B1C23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD24A1E3-949C-42E5-B920-5C4667B1C23C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E15A6B30-B89D-4A95-AA50-710CCE56A27C}
+	EndGlobalSection
+EndGlobal
